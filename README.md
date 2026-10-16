@@ -59,8 +59,7 @@ python -m pytest -v
 The acceptance test in [`test_acceptance.py`](test_acceptance.py) calls `classify_triangle()` and checks representative examples against these requirements.
 
 ## Copilot Review Log
-
-The following unit tests in [`test_triangle.py`](test_triangle.py) were drafted with GitHub Copilot and reviewed against the assignment requirements:
+The following unit tests in `test_triangle.py` were drafted with GitHub Copilot and reviewed against the assignment requirements:
 
 | Test | Decision | Review note |
 | --- | --- | --- |
@@ -69,10 +68,10 @@ The following unit tests in [`test_triangle.py`](test_triangle.py) were drafted 
 | `test_isosceles_triangle` | Kept | Checks exactly two equal sides with a valid non-right triangle. |
 | `test_scalene_triangle` | Edited | Uses `(3, 4, 6)` so it tests a non-right scalene triangle instead of repeating the `(3, 4, 5)` case. |
 | `test_invalid_triangle` | Kept | Checks a zero-length side. |
-| `test_invalid_triangle_two_sides_equal_third` | Kept | Checks the degenerate boundary. |
-| `test_right_isosceles_triangle_non_integer_hypotenuse` | Edited | Uses `5 * math.sqrt(2)` to match the specified non-integer right-triangle case. |
+| `test_invalid_triangle_two_sides_equal_third` | Kept | Checks the degenerate boundary where two sides equal the third side. |
+| `test_right_isosceles_triangle_non_integer_hypotenuse` | Edited | Uses `5 * math.sqrt(2)` to test a right isosceles triangle with a non-integer hypotenuse. I checked that the implementation uses `math.isclose()` with a tolerance rather than relying on exact floating-point equality with `==`. |
 | `test_invalid_triangle_negative_side` | Kept | Checks a negative side length. |
 
 ## AI-Use Disclosure
 
-GitHub Copilot was used to draft unit tests in `test_triangle.py`. I reviewed its suggestions against the assignment requirements and edited the scalene and non-integer right-triangle tests. ChatGPT was used for programming guidance, debugging assistance, and help organizing the project documentation. I ran the test suite with pytest to verify the results. The acceptance test in `test_acceptance.py` was written without Copilot.
+GitHub Copilot was used to draft unit tests in `test_triangle.py`. I reviewed its suggestions against the assignment requirements and edited the scalene and non-integer right-triangle tests. ChatGPT was used for debugging assistance, and help organizing the project as well as better create the README. I ran the test suite with pytest to verify the results. The acceptance test in `test_acceptance.py` was written without Copilot.
